@@ -76,6 +76,7 @@
 #include "widgets/assetswidget.h"
 #include "dialogs/adjustscenedialog.h"
 #include "dialogs/commandpalette.h"
+#include "CopilotUI/copilotdockwidget.h"
 
 using namespace Friction;
 
@@ -99,6 +100,7 @@ MainWindow::MainWindow(Document& document,
     , mTabProperties(nullptr)
     , mTimeline(nullptr)
     , mRenderWidget(nullptr)
+    , mCopilotWidget(nullptr)
     , mToolbar(nullptr)
     , mToolBox(nullptr)
     , mUI(nullptr)
@@ -907,6 +909,7 @@ void MainWindow::setupMainWidgets()
                                        mLayoutHandler,
                                        this);
     mRenderWidget = new RenderWidget(this);
+    mCopilotWidget = new CopilotDockWidget(this);
 }
 
 void MainWindow::setupStackWidgets()
@@ -1034,6 +1037,13 @@ void MainWindow::setupLayout()
                      -1,
                      tr("Properties"),
                      mTabProperties,
+                     false,
+                     true,
+                     false});
+    docks.push_back({UIDock::Position::Right,
+                     -1,
+                     tr("Copilot AI"),
+                     mCopilotWidget,
                      false,
                      true,
                      false});

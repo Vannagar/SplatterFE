@@ -147,12 +147,12 @@ void AppSupport::setSettings(QSettings *settings,
 
 const QString AppSupport::getAppName()
 {
-    return QString::fromUtf8("friction");
+    return QString::fromUtf8("splatter");
 }
 
 const QString AppSupport::getAppDisplayName()
 {
-    return QString::fromUtf8("Friction");
+    return QString::fromUtf8("Splatter");
 }
 
 const QString AppSupport::getAppDomain()

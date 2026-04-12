@@ -222,6 +222,7 @@ set(
     GUI/extraactions.cpp
     GUI/effectactions.cpp
     GUI/menu.cpp
+    CopilotUI/copilotdockwidget.cpp
 )
 
 set(
@@ -268,6 +269,7 @@ set(
     GUI/keysview.h
     GUI/mainwindow.h
     GUI/window.h
+    CopilotUI/copilotdockwidget.h
 )
 
 set(
@@ -353,6 +355,7 @@ target_link_libraries(
     ${QSCINTILLA_LIBRARIES}
     ${FFMPEG_LIBRARIES}
     ${SKIA_LIBRARIES}
+    copilot_client
 )
 
 if(${SKIA_USE_SYSTEM_LIBS} AND UNIX)
