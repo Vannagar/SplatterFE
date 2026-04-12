@@ -78,6 +78,7 @@ class MemoryHandler;
 class ObjectSettingsWidget;
 class BoxScrollWidget;
 class ScrollArea;
+class CopilotDockWidget;
 
 class MainWindow : public QMainWindow
 {
@@ -232,6 +233,7 @@ private:
 
     TimelineDockWidget *mTimeline;
     RenderWidget *mRenderWidget;
+    CopilotDockWidget *mCopilotWidget;
 
     Friction::Ui::ToolBar *mToolbar;
     Friction::Ui::ToolBox *mToolBox;

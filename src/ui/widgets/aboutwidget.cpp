@@ -133,7 +133,7 @@ AboutWidget::AboutWidget(QWidget *parent)
     mThirdParty->setTabBarAutoHide(true);
 
     QStringList parties;
-    parties << "friction";
+    parties << "splatter";
 #if defined LINUX_DEPLOY
     parties << "skia_bundle" << "gperftools" << "qt"  << "qscintilla" << "ffmpeg" << "unwind" << "xcb" << "xkbcommon";
 #elif defined WIN_DEPLOY
@@ -154,12 +154,12 @@ AboutWidget::AboutWidget(QWidget *parent)
     parties << "easing";
 
     for (const auto &doc: parties) {
-        QFile file(doc == "friction" ? QString(":/docs/LICENSE") : QString(":/docs/3rdparty/%1.html").arg(doc));
+        QFile file(doc == "splatter" ? QString(":/docs/LICENSE") : QString(":/docs/3rdparty/%1.html").arg(doc));
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) { continue; }
         const auto browser = new QTextBrowser(this);
         browser->setOpenExternalLinks(false);
         browser->setOpenLinks(false);
-        if (doc == "friction") { browser->setPlainText(file.readAll()); }
+        if (doc == "splatter") { browser->setPlainText(file.readAll()); }
         else {
             QString html = css;
             html.append(file.readAll());

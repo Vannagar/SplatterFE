@@ -83,7 +83,7 @@ void setScaleFactor()
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
     bool passThrough = true;
-    QSettings settings("friction", "friction");
+    QSettings settings("splatter", "splatter");
     const QString key = "settings/interfaceScalingPassThrough";
     if (settings.contains(key)) { passThrough = settings.value(key).toBool(); }
     QApplication::setHighDpiScaleFactorRoundingPolicy(passThrough ?
