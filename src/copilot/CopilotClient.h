@@ -9,7 +9,7 @@ class CopilotClient {
 public:
     CopilotClient(std::shared_ptr<grpc::Channel> channel);
 
-    // Call the server with a prompt
+    // Call the server with a prompt and a constructed Context
     std::string ExecutePrompt(const std::string& prompt);
 
 private:
